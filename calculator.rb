@@ -37,7 +37,7 @@ def calculator_method(operator, number_1, number_2)
   when "/"
     total = number_1.to_f / number_2.to_f
   end
-  return " | Display       = | #{total}"
+  return total
 end
 
 # METHOD to check if a string is a valid number
@@ -82,9 +82,9 @@ until keep_going == "n" do
   calculated_total = calculator_method(operator, number_1, number_2)
 
   if calculated_total % 1 == 0
-    puts calculated_total.to_i
+    puts " | Display       = | #{calculated_total.to_i}"
   else
-    puts calculated_total
+    puts " | Display       = | #{calculated_total}"
   end
 
   print "Continue (y/n)? "
