@@ -5,20 +5,26 @@ operation = gets.chomp
     operation = gets.chomp
   end
 
+def is_number?(num)
+  num == num.to_i.to_s || num == num.to_f.to_s
+end
+
 print "Enter the first number: "
 f_num = gets.chomp
-until f_num.to_s == f_num.to_i.to_s
+until is_number?(f_num)
   print "Re-Enter the first number: "
   f_num = gets.chomp
 end
 
 print "Enter the second number: "
 s_num = gets.chomp
-until s_num.to_s == s_num.to_i.to_s
+until is_number?(s_num)
   print "Re-Enter the second number: "
   s_num = gets.chomp
 end
 
+puts f_num
+puts s_num
 f_num = f_num.to_f
 s_num = s_num.to_f
 
@@ -39,3 +45,4 @@ when "divide", "/"
 end
 
 puts result
+
