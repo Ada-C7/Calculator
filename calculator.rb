@@ -28,9 +28,9 @@ def modulo (a, b)
 end
 
 # Checks if user enters number:
-# If user enter string, than method to_i will return 0
+# If user enter string, than method to_f will return 0
 def input_correct?(str)
-  if (str == "0") || str.to_i != 0
+  if (str == "0") || str.to_f != 0
     return true
   else
     return false
