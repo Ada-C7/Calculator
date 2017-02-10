@@ -21,7 +21,7 @@ end
 puts "Please enter your second number here: "
 begin
   b = gets.chomp
-  b = Float(a)
+  b = Float(b)
 rescue
   puts "Error, please enter a number: "
   retry
