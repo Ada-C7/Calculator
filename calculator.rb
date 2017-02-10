@@ -1,25 +1,25 @@
 #When method is called, an equation and the sum of the two numbers is printed.
 def add(number_1, number_2)
-  print "#{number_1.to_f} + #{number_2.to_f} = "
-  return number_1.to_f + number_2.to_f
+  print "#{number_1} + #{number_2} = "
+  return number_1 + number_2
 end
 
 #When method is called, an equation and the difference of the two numbers is printed.
 def subtract(number_1, number_2)
-  print "#{number_1.to_f} - #{number_2.to_f} = "
-  return number_1.to_f - number_2.to_f
+  print "#{number_1} - #{number_2} = "
+  return number_1 - number_2
 end
 
 #When method is called, an equation and the product of the two numbers is printed.
 def multiply(number_1, number_2)
-  print "#{number_1.to_f} * #{number_2.to_f} = "
-  return number_1.to_f * number_2.to_f
+  print "#{number_1} * #{number_2} = "
+  return number_1 * number_2
 end
 
 #When method is called, an equation and the quotient of the two numbers is printed.
 def divide(number_1, number_2)
-  print "#{number_1.to_f} / #{number_2.to_f} = "
-  return number_1.to_f / number_2.to_f
+  print "#{number_1} / #{number_2} = "
+  return number_1 / number_2
 end
 
 #Asks the user for two 'number' inputs and one 'operation' input.
@@ -44,13 +44,13 @@ if number_check_1 == nil || number_check_2 == nil
 else
   case operation
     when "add", "+"
-      puts add(number_1, number_2)
+      puts add(number_check_1, number_check_2) #number_check_1 and number_check_2
     when "subtract", "-"
-      puts subtract(number_1, number_2)
+      puts subtract(number_check_1, number_check_2)
     when "multiply", "*"
-      puts multiply(number_1, number_2)
+      puts multiply(number_check_1, number_check_2)
     when "divide", "/"
-      puts divide(number_1, number_2)
+      puts divide(number_check_1, number_check_2)
     else
       print "\nUser did not enter a valid mathematical operation.\n"
   end
