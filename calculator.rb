@@ -41,6 +41,7 @@ def good_number(division, exp, second_number)
       if number == "0" && division && second_number
         puts ">>>>>> Try again. Division by 0 is forbidden."
       else
+        #prevents exponentiating a number by a non-integer value
         if number !~ /^(-)?(\d)+(.)?(0)*$/ && exp && second_number
           puts ">>>>>> Try again. The power of the exponent must be an integer."
         else
@@ -99,7 +100,8 @@ number = []
 
 2.times do |i|
   print "#{which_number[i]} number: "
-  number << good_number((user_operator_input == "divide" || user_operator_input == "/" || user_operator_input == "mod" || user_operator_input == "%" ), (user_operator_input == "exponent" || user_operator_input == "**"), i == 1)
+  number << good_number((user_operator_input == "divide" || user_operator_input == "/" || user_operator_input == "mod" || user_operator_input == "%" ), 
+    (user_operator_input == "exponent" || user_operator_input == "**"), i == 1)
 end
 
 puts "The numbers are #{number[0]} and #{number[1]}\n\n"
@@ -115,7 +117,7 @@ case user_operator_input
     multiply(number[0], number[1])
   when "divide", "/"
     divide(number[0], number[1])
-  when "exponentiate", "**"
+  when "exponent", "**"
     exponentiate(number[0], number[1])
   when "mod", "%"
     modulo(number[0], number[1])
