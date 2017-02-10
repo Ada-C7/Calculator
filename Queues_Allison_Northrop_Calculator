@@ -1,0 +1,42 @@
+print "Please input a number "
+number_one = gets.chomp.to_f
+
+print "please input an operation "
+operation_chosen = gets.chomp
+
+print "please input a number "
+number_two = gets.chomp.to_f
+
+#methods made tied to operation user selects
+def add(number_one, number_two)
+  return number_one + number_two
+end
+  solution_add = add(number_one, number_two)
+
+def subtract(number_one, number_two)
+  return number_one - number_two
+end
+  solution_subtract = subtract(number_one, number_two)
+
+def multiply(number_one, number_two)
+  return number_one * number_two
+end
+  solution_multiply = multiply(number_one, number_two)
+
+def divide(number_one, number_two)
+  return number_one / number_two
+end
+  solution_divide = divide(number_one, number_two)
+
+#translates user input and ties it to the appropriate method
+puts "Here's your solution."
+if operation_chosen == "+" || operation_chosen == "add"
+  puts solution_add
+elsif operation_chosen == "-" || operation_chosen == "subtract"
+  puts solution_subtract
+elsif operation_chosen == "*" || operation_chosen == "multiply"
+  puts solution_multiply
+elsif operation_chosen == "/" || operation_chosen == "divide"
+  puts solution_divide
+else puts "Cannot compute. Please enter valid numbers and operators."
+end
