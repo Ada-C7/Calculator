@@ -37,16 +37,17 @@ first_number = read_number("What is the first number? ")
 second_number = read_number("What is the second number? ")
 
 # performs calculation based on user's input
-if command == "add" || command == "+"
+case command
+when "add", "+"
   result = first_number + second_number
   command = "+"
-elsif command == "substract" || command == "-"
+when "substract", "-"
   result = first_number - second_number
   command = "-"
-elsif command == "multiply" || command == "*"
+when "multiply", "*"
   result = first_number * second_number
   command = "*"
-elsif command == "divide" || command == "/"
+when "divide", "/"
   # catches the division by 0 that throws an error
   # begin contains code that potentially may throw an error
   begin
@@ -58,10 +59,10 @@ elsif command == "divide" || command == "/"
     # terminates the program
     exit
   end
-elsif command == "raise" || command == "^"
+when "raise", "^"
   result = first_number ** second_number
   command = "^"
-elsif command == "modulo" || command == "%"
+when "modulo", "%"
   command = "%"
   begin
     result = first_number % second_number
