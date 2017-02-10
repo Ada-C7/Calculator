@@ -23,15 +23,15 @@ def calculator_method(operator, number_1, number_2)
   when "+"
     total = number_1 + number_2
   when "subtract"
-    total = number_1 + number_2
+    total = number_1 - number_2
   when "-"
-    total = number_1 + number_2
+    total = number_1 - number_2
   when "multiply"
-    total = number_1 + number_2
+    total = number_1 * number_2
   when "x"
-    total = number_1 + number_2
+    total = number_1 * number_2
   when "*"
-    total = number_1 + number_2
+    total = number_1 * number_2
   when "divide"
     total = number_1.to_f / number_2.to_f
   when "/"
