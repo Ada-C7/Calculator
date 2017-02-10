@@ -1,0 +1,66 @@
+puts "value 1?"
+@n1= gets.chomp.to_i
+
+puts "value 2?"
+@n2 = gets.chomp.to_i
+
+puts "Type 1 to add, 2 to subtract, 3 to multiply, or 4 to divide two numbers: "
+operation_selection = gets.to_i
+
+# def request_calculation_type
+  if operation_selection == 1
+    def add(n1, n2)
+    puts n1 + n2
+  end
+
+print "your total is "
+puts add(@n1, @n2)
+
+
+elsif operation_selection == 2
+  def sub(n1, n2)
+  puts n1 - n2
+end
+print "your total is "
+puts sub(@n1, @n2)
+
+elsif operation_selection == 3
+  def multiply(n1, n2)
+  puts n1 * n2
+end
+print "your total is "
+puts multiply(@n1, @n2)
+
+else operation_selection == 4
+  def divide(n1, n2)
+    puts n1 / n2
+  end
+
+print "your total is "
+puts divide(@n1, @n2)
+
+end
+
+#### I HAVE BEEN LOOKING AT THIS CODE FOR TOOOOOO LONG
+# def request_calculation_type
+#   if operation_selection == 1
+#     print "your total is "
+#     puts add(@n1, @n2)
+ #   elsif operation_selection == 2
+ #     print "your total is "
+ #     puts sub(@n1, @n2)
+ #   elsif operation_selection == 3
+ #   print "your total is "
+ #   puts multiply(@n1, @n2)
+ #  else operation_selection == 4
+ #     print "your total is "
+ #     puts divide(@n1, @n2)
+ #
+ #   end
+ # end
+ #
+# print "your total is "
+# puts divide(@n1, @n2)
+
+# print operation_selection
+# puts operation_selection
