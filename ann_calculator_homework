@@ -1,0 +1,55 @@
+# create a method to pass 3 variables through, including the 2 numbers and the operators
+def math (first_number, second_number, user_operation)
+  case user_operation
+  when "+", "addition", "add"
+    print "#{first_number} + #{second_number} = "
+    puts first_number.to_f + second_number.to_f
+  when "-", "subtract", "subtraction", "minus"
+    print "#{first_number} - #{second_number} = "
+    puts first_number.to_f - second_number.to_f
+  when "*", "multiply"
+    print "#{first_number} * #{second_number} = "
+    puts first_number.to_f * second_number.to_f
+  when "%", "modulus"
+    print "#{first_number} % #{second_number} = "
+    puts first_number.to_f % second_number.to_f
+  when "/", "divide"
+    if second_number.to_i == 0
+      print "can't divide by 0, input another number to divide by"
+      second_number = gets.chomp
+      print "#{first_number} / #{second_number} = "
+      puts first_number.to_f / second_number.to_f
+    else
+      print "#{first_number} / #{second_number} = "
+      puts first_number.to_f / second_number.to_f
+    end
+  else
+    puts "invalid inputs"
+  end
+end
+
+# get the number variables and validate that they are number
+puts "give me a number"
+first_number = gets.chomp
+until first_number.to_i.to_s == first_number
+  puts "not a number, try again"
+  first_number = gets.chomp
+end
+
+puts "give me a number"
+second_number = gets.chomp
+until second_number.to_i.to_s == second_number
+  puts "not a number, try again"
+  second_number = gets.chomp
+end
+
+# get the operator, and validate that the operator is valid
+print "hello, what kind of math would you like to do?"
+operators = ["+", "add", "-", "subtract", "/", "divide", "*", "multiply", "%", "modulus"]
+user_operation = gets.chomp
+until operators.include?(user_operation)
+  print "not possible, try again:"
+  user_operation = gets.chomp
+end
+
+math(first_number, second_number, user_operation)
