@@ -1,48 +1,66 @@
-print "Enter an operation to use: "
-operation = gets.chomp
-  until ["+","-","*","/","add", "subtract", "multiply", "divide"].include? (operation)
-    print "Re-Enter an operation to use: "
-    operation = gets.chomp
+puts "Let's calculate!"
+yes_no = "y"
+while yes_no == "y"
+  print "Enter an operation to use. (Enter N to quit): "
+  operation = gets.chomp
+  if operation.downcase == "n"
+    break
+  else
+    until ["+","-","*","/","^","mod","add", "subtract", "multiply", "divide","exponent", "modulo"].include? (operation)
+      print "Re-Enter an operation to use: "
+      operation = gets.chomp
+    end
   end
 
-def is_number?(num)
-  num == num.to_i.to_s || num == num.to_f.to_s
-end
-
-print "Enter the first number: "
-f_num = gets.chomp
-until is_number?(f_num)
-  print "Re-Enter the first number: "
-  f_num = gets.chomp
-end
-
-print "Enter the second number: "
-s_num = gets.chomp
-until is_number?(s_num)
-  print "Re-Enter the second number: "
-  s_num = gets.chomp
-end
-
-puts f_num
-puts s_num
-f_num = f_num.to_f
-s_num = s_num.to_f
-
-case operation
-when "add", "+"
-  result = f_num + s_num
-when "subtract", "-"
-  result = f_num - s_num
-when "multiply", "*"
-  result = f_num * s_num
-when "divide", "/"
-  until s_num != 0
-    print "Enter the second number again: "
-    s_num = gets.chomp.to_i
+  print "Enter the first number: "
+  f_num = Float(gets.chomp) rescue nil
+  until f_num.is_a?(Float)
+    print "Re-Enter the first number: "
+    f_num = Float(gets.chomp) rescue nil
   end
-  result = f_num / s_num
 
+  print "Enter the second number: "
+  s_num = Float(gets.chomp) rescue nil
+  until s_num.is_a?(Float)
+    print "Re-Enter the second number: "
+    s_num = Float(gets.chomp) rescue nil
+  end
+
+  case operation
+  when "add", "+"
+    result = f_num + s_num
+  when "subtract", "-"
+    result = f_num - s_num
+  when "multiply", "*"
+    result = f_num * s_num
+  when "divide", "/"
+    until s_num != 0
+      print "Enter the second number again: "
+      s_num = gets.chomp.to_i
+    end
+    result = f_num / s_num
+  when "exponent", "^"
+    result = f_num ** s_num
+  when "modulo", "mod"
+    result = f_num % s_num
+  end
+
+  #returning integers instead of floats when it's applicable.
+  def is_integer?(num)
+    num % num.to_i == 0.0 rescue 0
+  end
+
+  if is_integer?(result)
+    result = result.to_i
+  end
+
+  if is_integer?(f_num)
+    f_num = f_num.to_i
+  end
+
+  if is_integer?(s_num)
+    s_num = s_num.to_i
+  end
+
+  puts "#{f_num} #{operation} #{s_num} = #{result}"
 end
-
-puts result
-
